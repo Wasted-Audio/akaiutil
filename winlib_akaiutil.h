@@ -34,7 +34,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <Windows.h>
+#include <windows.h>
 #include <io.h>
 #include <fcntl.h>
 #include <sys/stat.h>
@@ -50,7 +50,9 @@
 typedef unsigned char u_char;
 typedef unsigned int u_int;
 typedef unsigned long u_long;
+#if !defined(__MINGW32__) || !defined(__MINGW64__)
 typedef int ssize_t;
+#endif
 #ifndef SSIZE_MAX
 #define SSIZE_MAX INT_MAX
 #endif /* !SSIZE_MAX */
